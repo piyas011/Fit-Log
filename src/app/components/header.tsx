@@ -19,8 +19,7 @@ const HeaderSection = () => {
   const handelToggleMenu = (menuClicked: boolean) => {
     setMenuOpen(menuClicked);
   };
-  const buttonClass =
-    "cursor-pointer rounded-2xl border border-gray-200 px-3 py-1.5 text-sm transition hover:bg-gray-100 sm:px-4 sm:text-base";
+  const buttonClass = `cursor-pointer rounded-2xl border border-gray-200 px-3 py-1.5 text-sm transition hover:bg-gray-100 sm:px-4 sm:text-base `;
 
   const badgeClass =
     "ml-2 rounded-full bg-[#C2F800] px-2 py-1 font-bold text-black";
@@ -48,11 +47,23 @@ const HeaderSection = () => {
 
           {/* ================= DESKTOP NAVIGATION ================= */}
           <nav className="hidden items-center gap-2 sm:flex">
-            <Link href="/" className={buttonClass}>
+            <Link
+              href="/"
+              className={`${buttonClass} ${
+                pathName === "/" ? " text-[#C2F800]" : "hover:bg-[#ffffff10]"
+              }`}
+            >
               Workouts
             </Link>
 
-            <Link href="/myPlan" className={buttonClass}>
+            <Link
+              href="/myPlan"
+              className={`${buttonClass} ${
+                pathName === "/myPlan"
+                  ? " text-[#C2F800]"
+                  : "hover:bg-[#ffffff10]"
+              } `}
+            >
               My Plan
             </Link>
           </nav>
